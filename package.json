@@ -21,12 +21,16 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@nestjs/apollo": "^10.0.8",
     "@nestjs/common": "^8.0.0",
     "@nestjs/config": "^2.0.0",
     "@nestjs/core": "^8.0.0",
+    "@nestjs/graphql": "^10.0.8",
     "@nestjs/mongoose": "^9.0.3",
     "@nestjs/platform-express": "^8.0.0",
+    "apollo-server-express": "^3.6.7",
     "bcrypt": "^5.0.1",
+    "graphql": "^16.3.0",
     "mongoose": "^6.2.8",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
@@ -61,6 +65,9 @@
       "json",
       "ts"
     ],
+    "moduleNameMapper": {
+      "^src/(.*)$": "<rootDir>/$1"
+    },
     "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {

@@ -8,7 +8,7 @@ export interface HashedText {
 }
 
 @Injectable()
-export class HasingService {
+export class HashingService {
 
     public constructor(private configService: ConfigService) {}
 

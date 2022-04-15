@@ -1,19 +1,19 @@
 import { ConfigModule } from '@nestjs/config';
 import { Test, TestingModule } from '@nestjs/testing';
-import { HasingService } from './hasing.service';
+import { HashingService } from './hashing.service';
 
 const TEST_PASSWORD = "testPassword"
 
 describe('HasingService', () => {
-  let service: HasingService;
+  let service: HashingService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [ConfigModule],
-      providers: [HasingService],
+      providers: [HashingService],
     }).compile();
 
-    service = module.get<HasingService>(HasingService);
+    service = module.get<HashingService>(HashingService);
   });
 
   it('should be defined', () => {
