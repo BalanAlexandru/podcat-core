@@ -2,28 +2,28 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type User {
-  """Email of the user"""
+type UserOutput {
+  """Unique user identifier: el72esd6n346mtrl"""
+  id: String!
+
+  """Email of the user: Kallie.Schmitt@gmail.com"""
   email: String!
 
-  """The password of the user"""
-  password: String!
+  """First name of the user: Bertha"""
+  firstName: String
 
-  """First name of the user"""
-  firstName: String!
-
-  """Last name of the user"""
-  lastName: String!
+  """Last name of the user: Feil"""
+  lastName: String
 }
 
 type Query {
-  user(id: String!): User!
+  user(id: String!): UserOutput!
 }
 
 type Mutation {
-  createUser(createUserInput: CreateUserInput!): User!
-  updateUser(updateUserInput: UpdateUserInput!): User!
-  removeUser(id: String!): User!
+  createUser(createUserInput: CreateUserInput!): UserOutput!
+  updateUser(updateUserInput: UpdateUserInput!): UserOutput!
+  removeUser(id: String!): UserOutput!
 }
 
 input CreateUserInput {
