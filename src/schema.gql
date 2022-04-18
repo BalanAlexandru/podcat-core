@@ -3,16 +3,16 @@
 # ------------------------------------------------------
 
 type UserOutput {
-  """Unique user identifier: el72esd6n346mtrl"""
+  """Unique user identifier: 1urgodb8gh0v4wrw"""
   id: String!
 
-  """Email of the user: Kallie.Schmitt@gmail.com"""
+  """Email of the user: Ava_Pouros23@hotmail.com"""
   email: String!
 
-  """First name of the user: Bertha"""
+  """First name of the user: Devyn"""
   firstName: String
 
-  """Last name of the user: Feil"""
+  """Last name of the user: Haley"""
   lastName: String
 }
 
@@ -42,4 +42,9 @@ input UpdateUserInput {
 
   """Last name of the user"""
   lastName: String!
+
+  """
+  Authorization token: o2x2rlovrkjmyx6rdfsayrxss9r79jmo6rd7f73w8wt66ad2ksm9dxhwaqwrr9i6
+  """
+  token: String!
 }

@@ -52,6 +52,10 @@ export class UserService {
         throw new UserInputError(reason.message)
       })
 
+      if (!updatedUserDoc) {
+        throw new EntityNotFoundError(`No user with id ${id} exists`)
+      }
+
     return UserOutput.fromEntity(updatedUserDoc)
   }
 
@@ -61,6 +65,23 @@ export class UserService {
         throw new UserInputError(reason.message)
       })
 
+    if (!deletedUserDoc) {
+      throw new EntityNotFoundError(`No user with id ${id} exists`)
+    }
+
     return UserOutput.fromEntity(deletedUserDoc)
+  }
+
+  async getToken(id: string): Promise<string> {
+    const foundUserDoc = await this.userModel.findById(id).exec()
+      .catch(reason => {
+        throw new UserInputError(reason.message)
+      })
+
+      if (!foundUserDoc) {
+        throw new EntityNotFoundError(`No user with id ${id} exists`)
+      }
+
+      return foundUserDoc.token;
   }
 }

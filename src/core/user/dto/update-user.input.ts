@@ -1,4 +1,5 @@
 import { InputType, Field } from '@nestjs/graphql';
+import { faker } from '@faker-js/faker';
 
 @InputType()
 export class UpdateUserInput {
@@ -10,4 +11,7 @@ export class UpdateUserInput {
 
   @Field(() => String, { description: 'Last name of the user' })
   lastName: string;
+
+  @Field(() => String, { description: `Authorization token: ${faker.random.alphaNumeric(64)}` })
+  token?: string;
 }
